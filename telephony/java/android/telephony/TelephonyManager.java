@@ -7658,6 +7658,17 @@ public class TelephonyManager {
     public String getCdmaMdn() {
         return getCdmaMdn(getSubId());
     }
+    
+    /**
+     * {@hide}
+     */
+    public void toggleLTE(boolean on) {
+        try {
+            getITelephony().toggleLTE(on);
+        } catch (RemoteException e) {
+            //Silently fail
+        }
+    }
 
     /** @hide */
     @SystemApi
